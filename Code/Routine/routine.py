@@ -21,11 +21,16 @@ def r_create():
 def r_delete():
     # 获取文件内容
     routine_list = r_io.r_in()
+    # 判断文件是否为空
+    if routine_list == []:
+        input('没有周期任务，按回车继续')
+        return
     # 打印可删除的选项
     i = 1
     print('请选择所要删除的周期任务序号：')
     for r in routine_list:
-        print('{}. {}'.format(i, r.mission))
+        mission = r.split(',')[2]
+        print('{}. {}'.format(i, mission))
         i += 1
     choice = input()
     # 检测输入合法性
@@ -43,8 +48,8 @@ def r_delete():
     # 重新写入
     r_file = open(r_io.ROUTINE_FILE, 'w')
     r_file.close()
-    for r in routine_list:
-        r_io.r_out_old(r)
+    for r_line in routine_list:
+        r_io.r_out_old(r_line)
 
 if __name__ == '__main__':
     # r_create()

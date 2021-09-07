@@ -3,11 +3,12 @@
 from os import system
 from sys import exit
 from Routine import *
+from Event import *
 
 func_list = [('routine.r_create()','创建周期任务'),
-             ('','创建单次任务'),
+             ('event.e_create()','创建单次任务'),
              ('routine.r_delete()','删除周期任务'),
-             ('','删除单次任务'),
+             ('event.e_delete()','删除单次任务'),
              ('','启用可选模块'),
              ('','停用可选模块'),]
 
