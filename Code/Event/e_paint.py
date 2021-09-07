@@ -9,7 +9,8 @@ def paint_event():
     e_title_location = (WIN_WIDTH / 8 * 5 - e_title_size[0] / 2, WIN_HEIGHT * 3 / 16)
     DRAW.text(e_title_location, '长期任务', TITLE_COLOR, TITLE_FONT)
     # 绘制任务
-    with open(e_io.EVENT_FILE, 'r', encoding='UTF-8') as e_file:
+    try:
+        e_file = open(e_io.EVENT_FILE, 'r', encoding='UTF-8')
         e_mission_h = WIN_HEIGHT / 4
         count = 0
         for e in e_file.readlines():
@@ -22,3 +23,5 @@ def paint_event():
             if count >= 15:
                 break
         e_file.close()
+    except:
+        pass

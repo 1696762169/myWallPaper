@@ -1,6 +1,8 @@
 # r_io.py
 
-import time
+from time import gmtime
+from time import strftime
+from Update import CHINA_TIME
 
 ROUTINE_FILE = 'Routine\\routine.txt'
 
@@ -18,7 +20,7 @@ def r_in():
 # 向文档中写入一条新routine，需要传入两个string
 def r_out_new(mission, cycle):
     r_file = open(ROUTINE_FILE, 'a', encoding='UTF-8')
-    start = str(time.time())
+    start = str(strftime('%Y/%m/%d', gmtime(CHINA_TIME)))
     r_file.write('0,{},{},{}\n'.format(start, mission, cycle))
     r_file.close()
 

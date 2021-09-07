@@ -1,6 +1,6 @@
 # event.py
 
-import time
+from time import strptime
 from Event import e_io
 
 # 创建长期任务
@@ -12,7 +12,7 @@ def e_create():
     # 检测输入合法性
     while True:
         try:
-            date = time.strptime(ddl, '%Y/%m/%d')
+            date = strptime(ddl, '%Y/%m/%d')
             break
         except:
             ddl = input('请输入正确格式的日期：')

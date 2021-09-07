@@ -2,12 +2,15 @@
 
 from os import system
 from sys import exit
+from time import time
+
 from Routine import *
 from Event import *
 import paint
 
 func_list = [('routine.r_create()','创建周期任务'),
              ('event.e_create()','创建单次任务'),
+             ('routine.r_finish()', '标记周期任务已完成'),
              ('routine.r_delete()','删除周期任务'),
              ('event.e_delete()','删除单次任务'),
              ('','启用可选模块'),
@@ -31,7 +34,7 @@ def main():
         try:
             if choice == '0':
                 paint.generateWallpaper()
-                paint.setWallpaper()
+                # paint.setWallpaper()
                 break
             else:
                 eval(func_list[int(choice) - 1][0])
@@ -44,4 +47,7 @@ if __name__ == '__main__':
     # for i in range(20):
     #     r_io.r_out_new('测试{}'.format(randint(0, 999999)), randint(0, 99))
     #     e_io.e_out_new('测试{}'.format(randint(0, 999999)), '{}/{}/{}'.format(randint(2000,2021), randint(1, 12), randint(1, 30)))
-    main()
+
+    # paint.generateWallpaper()
+    routine.r_finish()
+    # main()
