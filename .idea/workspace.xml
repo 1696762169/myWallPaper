@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="36a42065-dcaf-4eef-90b9-fbda7d8dea24" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/Code/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/.idea/myWallPaper.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Code/main.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1xiXtgJ8ijqtMHdjpJUmvJ1d6m0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="36a42065-dcaf-4eef-90b9-fbda7d8dea24" name="默认变更列表" comment="" />
+      <created>1630839098297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630839098297</updated>
+    </task>
+    <servers />
+  </component>
+</project>
