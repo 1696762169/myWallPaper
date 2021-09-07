@@ -46,7 +46,7 @@ def r_delete():
     # 删除列表中的对象
     del routine_list[choice - 1]
     # 重新写入
-    r_file = open(r_io.ROUTINE_FILE, 'w')
+    r_file = open(r_io.ROUTINE_FILE, 'w', encoding='UTF-8')
     r_file.close()
     for r_line in routine_list:
         r_io.r_out_old(r_line)

@@ -4,6 +4,7 @@ from os import system
 from sys import exit
 from Routine import *
 from Event import *
+import paint
 
 func_list = [('routine.r_create()','创建周期任务'),
              ('event.e_create()','创建单次任务'),
@@ -29,6 +30,8 @@ def main():
         choice = input()
         try:
             if choice == '0':
+                paint.generateWallpaper()
+                paint.setWallpaper()
                 break
             else:
                 eval(func_list[int(choice) - 1][0])
@@ -37,4 +40,8 @@ def main():
         system('cls')
 
 if __name__ == '__main__':
+    # from random import randint
+    # for i in range(20):
+    #     r_io.r_out_new('测试{}'.format(randint(0, 999999)), randint(0, 99))
+    #     e_io.e_out_new('测试{}'.format(randint(0, 999999)), '{}/{}/{}'.format(randint(2000,2021), randint(1, 12), randint(1, 30)))
     main()
