@@ -29,7 +29,7 @@ def e_delete():
         return
     # 打印可删除的选项
     i = 1
-    print('请选择所要删除的单次任务序号：')
+    print('请选择所要删除的单次任务序号，可用“/”分隔多个序号：')
     for e in event_list:
         mission = e.split(',')[0]
         print('{}. {}'.format(i, mission))
@@ -37,16 +37,31 @@ def e_delete():
     choice = input()
     # 检测输入合法性
     while True:
-        try:
-            choice = int(choice)
-            if choice <= 0 or choice > len(event_list):
-                choice = input('请输入正确的序号：')
-            else:
+        choice_list_str = choice.split('/')
+        ensure = True
+        for c in choice_list_str:
+            try:
+                c = int(c)
+                if c <= 0 or c> len(event_list):
+                    ensure = False
+                    break
+                else:
+                    continue
+            except:
+                ensure = False
                 break
-        except:
+        if ensure == False:
             choice = input('请输入正确的序号：')
+        else:
+            break
     # 删除列表中的对象
-    del event_list[choice - 1]
+    choice_list_int = []
+    for choice in choice_list_str:
+        choice = int(choice)
+        choice_list_int.append(choice)
+    choice_list_int.sort(reverse=True)
+    for event in choice_list_int:
+        del event_list[event - 1]
     # 重新写入
     e_file = open(e_io.EVENT_FILE, 'w', encoding='UTF-8')
     e_file.close()
