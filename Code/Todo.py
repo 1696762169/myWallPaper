@@ -43,11 +43,11 @@ def main():
         system('cls')
 
 if __name__ == '__main__':
-    # from random import randint
-    # for i in range(20):
-    #     r_io.r_out_new('测试{}'.format(randint(0, 999999)), randint(0, 99))
-    #     e_io.e_out_new('测试{}'.format(randint(0, 999999)), '{}/{}/{}'.format(randint(2000,2021), randint(1, 12), randint(1, 30)))
+    from random import randint
+    for i in range(20):
+        r_io.r_out_new('测试{}'.format(randint(0, 999999)), randint(0, 99))
+        e_io.e_out_new('测试{}'.format(randint(0, 999999)), '{}/{}/{}'.format(2021, randint(1, 12), randint(1, 30)))
 
     # paint.generateWallpaper()
-    routine.r_finish()
+    # routine.r_finish()
     # main()

@@ -16,8 +16,20 @@ def e_in():
 
 # 向文件中写入一个新的event，需要输入两个string
 def e_out_new(mission, ddl):
-    e_file = open(EVENT_FILE, 'a', encoding='UTF-8')
-    e_file.write('{},{}\n'.format(mission, ddl))
+    # 决定新任务插入位置
+    event_list = e_in()
+    ddl_time = time.mktime(time.strptime(ddl, '%Y/%m/%d'))
+    for i in range(len(event_list)):
+        e_time = event_list[i].strip('\n').split(',')[1]
+        if ddl_time < time.mktime(time.strptime(e_time, '%Y/%m/%d')):
+            event_list.insert(i, '{},{}\n'.format(mission, ddl))
+            break
+    else:
+        event_list.append('{},{}\n'.format(mission, ddl))
+    # 重新写入文件
+    e_file = open(EVENT_FILE, 'w', encoding='UTF-8')
+    for e in event_list:
+        e_file.write(e)
     e_file.close()
 
 # 向文件中写入一个旧的event，需要输入一行文件

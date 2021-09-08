@@ -15,6 +15,8 @@ def paint_event():
         count = 0
         for e in e_file.readlines():
             mission = e.split(',')[0]
+            date = e.split(',')[1].strip('\n').split('/')
+            mission = '{}    {}月{}日'.format(mission, date[1], date[2])
             e_mission_size = MISSION_FONT.getsize(mission)[0]
             e_mission_w = WIN_WIDTH / 8 * 5 - e_mission_size / 2
             DRAW.text((e_mission_w, e_mission_h), mission, MISSION_COLOR, MISSION_FONT)

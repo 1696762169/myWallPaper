@@ -1,7 +1,6 @@
 # r_io.py
 
-from time import gmtime
-from time import strftime
+from time import gmtime, strftime
 from Update import CHINA_TIME
 
 ROUTINE_FILE = 'Routine\\routine.txt'
