@@ -8,6 +8,8 @@ def r_create():
     # 获取输入
     mission = input('请输入周期任务的内容：')
     cycle = input('请输入周期任务的周期：')
+    if cycle == '0':
+        return
     # 检测输入合法性
     while True:
         try:
@@ -18,6 +20,8 @@ def r_create():
                 cycle = input('请输入正确的周期：')
         except:
             cycle = input('请输入正确的周期：')
+            if cycle == '0':
+                return
     # 写入文件
     r_io.r_out_new(mission, cycle)
 
@@ -39,6 +43,8 @@ def ensureChoice(choice, r_len):
                 break
         if ensure == False:
             choice = input('请输入正确的序号：')
+            if choice == '0':
+                return []
         else:
             break
     return choice_list_str
@@ -68,9 +74,13 @@ def r_finish():
                 index += 1
         j += 1
     choice = input()
+    if choice == '0':
+        return
     # 检测输入合法性
     r_len = len(routine_dict.keys())
     choice_list_str = ensureChoice(choice, r_len)
+    if choice_list_str == []:
+        return
     # 标记列表中的对象
     choice_list_int = []
     for choice in choice_list_str:
@@ -103,9 +113,13 @@ def r_delete():
         print('{}. {}'.format(i, mission))
         i += 1
     choice = input()
+    if choice == '0':
+        return
     # 检测输入合法性
     r_len = len(routine_list)
     choice_list_str = ensureChoice(choice, r_len)
+    if choice_list_str == []:
+        return
     # 删除列表中的对象
     choice_list_int = []
     for choice in choice_list_str:

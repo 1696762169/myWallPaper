@@ -13,7 +13,8 @@ main_menu = [('routine.r_create()', '创建周期任务'),
              ('routine.r_finish()', '标记周期任务已完成'),
              ('routine.r_delete()','删除周期任务'),
              ('event.e_delete()','删除单次任务'),
-             ('','长期任务菜单'),
+             ('','长期任务进度更新'),
+             ('','长期任务管理'),
              ('','可选模块菜单'),
              ('','设置')]
 
@@ -35,7 +36,7 @@ def main():
         try:
             if choice == '0':
                 paint.generateWallpaper()
-                # paint.setWallpaper()
+                paint.setWallpaper()
                 break
             else:
                 eval(main_menu[int(choice) - 1][0])
@@ -52,7 +53,7 @@ if __name__ == '__main__':
 
     # paint.generateWallpaper()
     # routine.r_create()
-    routine.r_finish()
+    # routine.r_finish()
     # routine.r_delete()
     # event.e_delete()
 

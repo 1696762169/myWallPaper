@@ -9,6 +9,8 @@ def e_create():
     mission = input('请输入单次任务内容：')
     # 输入截止日期
     ddl = input('请输入截止日期，格式为“年/月/日”：')
+    if ddl == '0':
+        return
     # 检测输入合法性
     while True:
         try:
@@ -16,6 +18,8 @@ def e_create():
             break
         except:
             ddl = input('请输入正确格式的日期：')
+            if ddl == '0':
+                return
     # 写入文件
     e_io.e_out_new(mission, ddl)
 
@@ -35,6 +39,8 @@ def e_delete():
         print('{}. {}'.format(i, mission))
         i += 1
     choice = input()
+    if choice == '0':
+        return
     # 检测输入合法性
     while True:
         choice_list_str = choice.split('/')
@@ -52,6 +58,8 @@ def e_delete():
                 break
         if ensure == False:
             choice = input('请输入正确的序号：')
+            if choice == '0':
+                return
         else:
             break
     # 删除列表中的对象
