@@ -5,9 +5,9 @@ from Event import e_io
 
 def paint_event():
     # 绘制标题
-    e_title_size = TITLE_FONT.getsize('长期任务')
+    e_title_size = TITLE_FONT.getsize('待办任务')
     e_title_location = (WIN_WIDTH / 8 * 5 - e_title_size[0] / 2, WIN_HEIGHT * 2.5 / 16)
-    DRAW.text(e_title_location, '长期任务', TITLE_COLOR, TITLE_FONT)
+    DRAW.text(e_title_location, '待办任务', TITLE_COLOR, TITLE_FONT)
     # 绘制任务
     try:
         e_file = open(e_io.EVENT_FILE, 'r', encoding='UTF-8')

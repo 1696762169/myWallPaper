@@ -2,13 +2,15 @@
 
 import paint_init
 from Routine import r_paint
-from  Event import  e_paint
+from Event import  e_paint
+from Project import p_paint
 import win32gui, win32con, win32api
 
 # 生成壁纸图片
 def generateWallpaper():
     r_paint.paint_routine()
     e_paint.paint_event()
+    p_paint.paint_project()
     paint_init.WALLPAPER.save(paint_init.WALLPAPER_PATH)
 
 # 将图片设置为壁纸，实现原理暂时未知
