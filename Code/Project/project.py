@@ -116,11 +116,11 @@ def p_create():
             if mission_num == '0':
                 return
     # 生成数据
-    start_time = str(time.time())
+    start_time = str(int(time.time()))
     if ddl_type == 0:
-        ddl_time = time.time() + ddl * 3600 * 24
+        ddl_time = str(int(time.time() + ddl * 3600 * 24))
     else:
-        ddl_time = time.mktime(time.strptime(ddl, '%Y/%m/%d'))
+        ddl_time = str(int(time.mktime(time.strptime(ddl, '%Y/%m/%d'))))
     mission_num = str(mission_num)
     # 写入文件
     p_file = open(PROJECT_FILE, 'w', encoding='UTF-8')

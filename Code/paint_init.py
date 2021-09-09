@@ -12,7 +12,9 @@ WIN_HEIGHT = user32.GetSystemMetrics(1) * 2
 # 设置颜色
 BACKGROUND_COLOR = '#363636'
 TITLE_COLOR = '#f0f0f0'
-MISSION_COLOR = '#e0e0e0'
+NORMAL_COLOR = '#e0e0e0'
+PROJECT_COLOR = '#9b1b1b'
+TIME_COLOR = '#40afe3'
 
 # 设置字体
 font_path = r'杨任东竹石体.ttf'
@@ -20,7 +22,7 @@ title_size = int(WIN_HEIGHT / 16)
 TITLE_FONT = ImageFont.truetype(font_path, title_size, encoding='UTF-8')
 
 mission_size = int(WIN_HEIGHT / 27)
-MISSION_FONT = ImageFont.truetype(font_path, mission_size, encoding='UTF-8')
+NORMAL_FONT = ImageFont.truetype(font_path, mission_size, encoding='UTF-8')
 
 # 初始化画布
 WALLPAPER = Image.new('RGB', (2560, 1600), BACKGROUND_COLOR)

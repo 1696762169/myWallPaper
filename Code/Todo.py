@@ -53,6 +53,7 @@ if __name__ == '__main__':
     #     e_io.e_out_new('测试{}'.format(randint(0, 999999)), '{}/{}/{}'.format(2021, randint(1, 12), randint(1, 30)))
 
     # paint.generateWallpaper()
+    # paint.setWallpaper()
     # routine.r_create()
     # routine.r_finish()
     # routine.r_delete()

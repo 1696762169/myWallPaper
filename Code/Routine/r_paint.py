@@ -34,9 +34,9 @@ def paint_routine():
         r_linegap = WIN_HEIGHT / 27
     for r in r_list:
         mission = r.split(',')[2]
-        r_mission_size = MISSION_FONT.getsize(mission)[0]
+        r_mission_size = NORMAL_FONT.getsize(mission)[0]
         r_mission_w = WIN_WIDTH / 8 * 3 - r_mission_size / 2
-        DRAW.text((r_mission_w, r_mission_h), mission, MISSION_COLOR, MISSION_FONT)
+        DRAW.text((r_mission_w, r_mission_h), mission, NORMAL_COLOR, NORMAL_FONT)
         r_mission_h += r_linegap
         count += 1
         if count >= 15:
