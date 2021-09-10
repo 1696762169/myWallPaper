@@ -9,13 +9,16 @@ from Event import *
 from Project import *
 import paint
 
+# 判断长期项目是否存在，以便生成菜单
+p_isExist = project.p_exist()
+
 main_menu = [('routine.r_create()', '创建周期任务'),
              ('event.e_create()','创建单次任务'),
              ('routine.r_finish()', '标记周期任务已完成'),
              ('routine.r_delete()','删除周期任务'),
              ('event.e_delete()','删除单次任务'),
              ('project.p_update()','长期项目进度更新'),
-             ('project.project_menu()','长期项目管理'),
+             ('project.p_manage(p_isExist)','删除长期项目' if p_isExist else '创建长期项目'),
              ('','可选模块菜单'),
              ('','设置')]
 

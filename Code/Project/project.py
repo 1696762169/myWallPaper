@@ -46,23 +46,6 @@ def p_update():
     p_file.write(p_contain[4])
     p_file.close()
 
-# 长期项目管理菜单
-def project_menu():
-    print('1. 创建长期项目')
-    print('2. 删除长期项目')
-    choice = input('请选择所要使用的功能：')
-    while True:
-        if choice == '1':
-            p_create()
-            return
-        elif choice == '2':
-            p_delete()
-            return
-        elif choice == '0':
-            return
-        else:
-            choice = input('请输入正确的功能代号：')
-
 # 创建长期项目
 def p_create():
     # 获取项目名
@@ -141,3 +124,24 @@ def p_delete():
         p_file = open(PROJECT_FILE, 'w', encoding='UTF-8')
         p_file.close()
         input('删除成功！按回车返回')
+
+# 检测是否有长期项目
+def p_exist():
+    try:
+        p_file = open(PROJECT_FILE, 'r', encoding='UTF-8')
+        p = p_file.readline()
+        p_file.close()
+        p_contain = p.split(',')
+        if len(p_contain) != 5:
+            return False
+        else:
+            return True
+    except:
+        return False
+
+# 长期项目创建/删除
+def p_manage(p_isExist):
+    if p_isExist:
+        p_delete()
+    else:
+        p_create()

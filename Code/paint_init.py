@@ -21,8 +21,11 @@ font_path = r'杨任东竹石体.ttf'
 title_size = int(WIN_HEIGHT / 16)
 TITLE_FONT = ImageFont.truetype(font_path, title_size, encoding='UTF-8')
 
-mission_size = int(WIN_HEIGHT / 27)
-NORMAL_FONT = ImageFont.truetype(font_path, mission_size, encoding='UTF-8')
+normal_size = int(WIN_HEIGHT / 27)
+NORMAL_FONT = ImageFont.truetype(font_path, normal_size, encoding='UTF-8')
+
+small_size = int(WIN_HEIGHT / 32)
+SMALL_FONT = ImageFont.truetype(font_path, small_size, encoding='UTF-8')
 
 # 初始化画布
 WALLPAPER = Image.new('RGB', (2560, 1600), BACKGROUND_COLOR)

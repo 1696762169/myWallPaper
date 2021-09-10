@@ -25,16 +25,16 @@ def paint_project():
         return
     # 绘制项目名
     p_name_location = (WIN_WIDTH / 4, WIN_HEIGHT / 100)
-    DRAW.text(p_name_location, '项目名称：{}'.format(p_contain[0]), NORMAL_COLOR, NORMAL_FONT)
+    DRAW.text(p_name_location, '项目名称：{}'.format(p_contain[0]), NORMAL_COLOR, SMALL_FONT)
     # 绘制截止时间
-    ddl_date = time.strftime('%Y年%m月%d日', time.gmtime(int(p_contain[2])))
-    p_ddl_size = NORMAL_FONT.getsize('截止时间：{}'.format(ddl_date))
+    ddl_date = time.strftime('%Y/%m/%d', time.gmtime(int(p_contain[2])))
+    p_ddl_size = SMALL_FONT.getsize('截止时间：{}'.format(ddl_date))
     p_ddl_location = (WIN_WIDTH / 4 * 3 - p_ddl_size[0], WIN_HEIGHT / 100)
-    DRAW.text(p_ddl_location, '截止时间：{}'.format(ddl_date), NORMAL_COLOR, NORMAL_FONT)
+    DRAW.text(p_ddl_location, '截止时间：{}'.format(ddl_date), NORMAL_COLOR, SMALL_FONT)
     # 绘制项目进度文字
     p_done_location = (WIN_WIDTH / 4, WIN_HEIGHT / 100 * 6)
-    p_done_size = NORMAL_FONT.getsize('项目进度：')
-    DRAW.text(p_done_location, '项目进度：', NORMAL_COLOR, NORMAL_FONT)
+    p_done_size = SMALL_FONT.getsize('项目进度：')
+    DRAW.text(p_done_location, '项目进度：', NORMAL_COLOR, SMALL_FONT)
     # 绘制项目进度
     p_done_x = WIN_WIDTH / 4 + p_done_size[0]
     p_done_y = WIN_HEIGHT / 100 * 6 + p_done_size[1] / 3
@@ -44,8 +44,8 @@ def paint_project():
     DRAW.rectangle(p_done_rec, PROJECT_COLOR)
     # 绘制时间进度文字
     p_time_location = (WIN_WIDTH / 4, WIN_HEIGHT / 100 * 11)
-    p_time_size = NORMAL_FONT.getsize('时间进度：')
-    DRAW.text(p_time_location, '时间进度：', NORMAL_COLOR, NORMAL_FONT)
+    p_time_size = SMALL_FONT.getsize('时间进度：')
+    DRAW.text(p_time_location, '时间进度：', NORMAL_COLOR, SMALL_FONT)
     # 绘制时间进度
     p_time_x = WIN_WIDTH / 4 + p_time_size[0]
     p_time_y = WIN_HEIGHT / 100 * 11 + p_time_size[1] / 3
