@@ -1,7 +1,8 @@
 # event.py
 
-from time import strptime
 from Event import e_io
+from GlobalFunc import ensureMulChoice
+from time import strptime
 
 # 创建长期任务
 def e_create():
@@ -42,26 +43,10 @@ def e_delete():
     if choice == '0':
         return
     # 检测输入合法性
-    while True:
-        choice_list_str = choice.split('/')
-        ensure = True
-        for c in choice_list_str:
-            try:
-                c = int(c)
-                if c <= 0 or c> len(event_list):
-                    ensure = False
-                    break
-                else:
-                    continue
-            except:
-                ensure = False
-                break
-        if ensure == False:
-            choice = input('请输入正确的序号：')
-            if choice == '0':
-                return
-        else:
-            break
+    e_len = len(event_list)
+    choice_list_str = ensureMulChoice(choice, e_len)
+    if choice_list_str == []:
+        return
     # 删除列表中的对象
     choice_list_int = []
     for choice in choice_list_str:

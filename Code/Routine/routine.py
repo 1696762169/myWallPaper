@@ -1,6 +1,7 @@
 # routine.py
 
 from Routine import r_io
+from GlobalFunc import ensureMulChoice
 import time
 
 # 创建周期任务
@@ -73,12 +74,13 @@ def r_finish():
                 routine_dict[index] = j
                 index += 1
         j += 1
+    # 获取输入
     choice = input()
     if choice == '0':
         return
     # 检测输入合法性
     r_len = len(routine_dict.keys())
-    choice_list_str = ensureChoice(choice, r_len)
+    choice_list_str = ensureMulChoice(choice, r_len)
     if choice_list_str == []:
         return
     # 标记列表中的对象
@@ -117,7 +119,7 @@ def r_delete():
         return
     # 检测输入合法性
     r_len = len(routine_list)
-    choice_list_str = ensureChoice(choice, r_len)
+    choice_list_str = ensureMulChoice(choice, r_len)
     if choice_list_str == []:
         return
     # 删除列表中的对象

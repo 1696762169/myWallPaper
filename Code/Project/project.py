@@ -49,36 +49,36 @@ def p_update():
 # 创建长期项目
 def p_create():
     # 获取项目名
-    name = input('请输入项目名称：')
+    p_name = input('请输入项目名称：')
     # 获取项目完成时间
-    ddl = input('请输入预计完成天数或截止日期，格式位“年/月/日”：')
-    if ddl == '0':
+    p_ddl = input('请输入预计完成天数或截止日期，格式为“年/月/日”：')
+    if p_ddl == '0':
         return
     # 检测输入合法性
     while True:
         try:
-            ddl = int(ddl)
-            if ddl > 0:
+            p_ddl = int(p_ddl)
+            if p_ddl > 0:
                 ddl_type = 0
                 break
             else:
-                ddl = input('请输入正确的完成天数或截止日期：')
-                if ddl == '0':
+                p_ddl = input('请输入正确的完成天数或截止日期：')
+                if p_ddl == '0':
                     return
         except:
             try:
-                p_gmtime = time.strptime(ddl, '%Y/%m/%d')
+                p_gmtime = time.strptime(p_ddl, '%Y/%m/%d')
                 ddl_time = time.mktime(p_gmtime)
                 if ddl_time > time.time():
                     ddl_type = 1
                     break
                 else:
-                    ddl = input('请输入正确的完成天数或截止日期：')
-                    if ddl == '0':
+                    p_ddl = input('请输入正确的完成天数或截止日期：')
+                    if p_ddl == '0':
                         return
             except:
-                ddl = input('请输入正确的完成天数或截止日期：')
-                if ddl == '0':
+                p_ddl = input('请输入正确的完成天数或截止日期：')
+                if p_ddl == '0':
                     return
     # 获取需要完成的任务数
     mission_num = input('请输入项目总进度数量：')
@@ -101,13 +101,13 @@ def p_create():
     # 生成数据
     start_time = str(int(time.time()))
     if ddl_type == 0:
-        ddl_time = str(int(time.time() + ddl * 3600 * 24))
+        ddl_time = str(int(time.time() + p_ddl * 3600 * 24))
     else:
-        ddl_time = str(int(time.mktime(time.strptime(ddl, '%Y/%m/%d'))))
+        ddl_time = str(int(time.mktime(time.strptime(p_ddl, '%Y/%m/%d'))))
     mission_num = str(mission_num)
     # 写入文件
     p_file = open(PROJECT_FILE, 'w', encoding='UTF-8')
-    p_file.write('{},{},{},{},{}'.format(name, start_time, ddl_time, mission_num, '0'))
+    p_file.write('{},{},{},{},{}'.format(p_name, start_time, ddl_time, mission_num, '0'))
     p_file.close()
     input('创建成功！按回车返回')
 
