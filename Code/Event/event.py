@@ -1,7 +1,7 @@
 # event.py
 
 from Event import e_io
-from GlobalFunc import ensureMulChoice
+from GlobalFunc import ensureDate, ensureMulChoice
 from time import strptime
 
 # 创建长期任务
@@ -10,17 +10,10 @@ def e_create():
     mission = input('请输入单次任务内容：')
     # 输入截止日期
     ddl = input('请输入截止日期，格式为“年/月/日”：')
+    # 检测输入合法性
+    ddl = ensureDate(ddl)
     if ddl == '0':
         return
-    # 检测输入合法性
-    while True:
-        try:
-            date = strptime(ddl, '%Y/%m/%d')
-            break
-        except:
-            ddl = input('请输入正确格式的日期：')
-            if ddl == '0':
-                return
     # 写入文件
     e_io.e_out_new(mission, ddl)
 
@@ -40,21 +33,14 @@ def e_delete():
         print('{}. {}'.format(i, mission))
         i += 1
     choice = input()
-    if choice == '0':
-        return
     # 检测输入合法性
     e_len = len(event_list)
-    choice_list_str = ensureMulChoice(choice, e_len)
-    if choice_list_str == []:
+    choice_list_int = ensureMulChoice(choice, e_len)
+    if choice_list_int == []:
         return
     # 删除列表中的对象
-    choice_list_int = []
-    for choice in choice_list_str:
-        choice = int(choice)
-        choice_list_int.append(choice)
-    choice_list_int.sort(reverse=True)
-    for event in choice_list_int:
-        del event_list[event - 1]
+    for choice_int in choice_list_int:
+        del event_list[choice_int - 1]
     # 重新写入
     e_file = open(e_io.EVENT_FILE, 'w', encoding='UTF-8')
     e_file.close()

@@ -7,7 +7,7 @@ from time import time
 from Routine import *
 from Event import *
 from Project import *
-from Module import *
+from Module import module
 import paint
 
 # 判断长期项目是否存在，以便生成菜单
@@ -63,5 +63,6 @@ if __name__ == '__main__':
     # routine.r_delete()
     # event.e_delete()
     # project.project_menu()
+    module.module_menu()
 
-    main()
+    # main()
