@@ -1,6 +1,6 @@
 # lesson_manage.py
 
-from GlobalFunc import ensureNum, ensureMulChoice
+from GlobalFunc import ensureNum, ensureMulChoice, ensureLength
 from FilePathList import LESSON_FILE
 
 # 读入文件中的课程，返回包含文件每一行的列表
@@ -37,6 +37,7 @@ def printLesson(lesson_list):
 def lesson_create():
     # 获取课程名
     lesson_name = input('请输入课程名称（输入0返回）：')
+    lesson_name = ensureLength(lesson_name, 4)
     if lesson_name == '0':
         return
     # 获取上课地点

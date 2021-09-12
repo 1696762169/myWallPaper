@@ -1,7 +1,7 @@
 # r_io.py
 
 from FilePathList import ROUTINE_FILE
-from Update import CHINA_TIME
+from GlobalFunc import CHINA_TIME
 from time import gmtime, strftime
 
 # 读取文档中的所有routine，并返回一个包含文件每一行的列表

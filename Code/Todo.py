@@ -40,6 +40,7 @@ def main():
         choice = input()
         try:
             if choice == '0':
+                print('壁纸生成中，请勿关闭')
                 paint.generateWallpaper()
                 paint.setWallpaper()
                 break

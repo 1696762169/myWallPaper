@@ -1,12 +1,10 @@
 # Update.py
 
+from GlobalFunc import CHINA_TIME
 from FilePathList import UPDATE_FILE, ROUTINE_FILE
 import paint
 from Routine import r_io
 import time
-
-# 中国时间戳
-CHINA_TIME = time.time() + 3600 * 8
 
 # 用于判断是否执行刷新操作，返回bool值
 def updateAllow():

@@ -1,6 +1,10 @@
 # GlobalFunc.py
 
 from FilePathList import MODULE_FILE
+from time import time, strptime
+
+# 中国时间戳
+CHINA_TIME = time() + 3600 * 8
 
 # 保证单个数字输入的合法性，返回数字字符串
 def ensureNum(number, tips, limit = 0):
@@ -25,7 +29,7 @@ def ensureDate(date):
         if date == '0':
             return '0'
         try:
-            date = strptime(ddl, '%Y/%m/%d')
+            d = strptime(date, '%Y/%m/%d')
             return date
         except:
             date = input('请输入正确格式的日期：')
@@ -59,6 +63,16 @@ def ensureMulChoice(choice, length):
         choice_list_int.append(choice)
     choice_list_int.sort(reverse=True)
     return choice_list_int
+
+# 保证输入长度在正常范围内
+def ensureLength(_input, limit):
+    while True:
+        if _input == '0':
+            return _input
+        if len(_input) <= limit:
+            return _input
+        else:
+            _input = input('输入过长，请重新输入：')
 
 # 检测可选模块是否开启，返回bool
 def checkModuleOn(module_name):

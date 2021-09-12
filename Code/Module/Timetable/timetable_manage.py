@@ -1,7 +1,7 @@
 # timetable_manage.py
 
-from GlobalFunc import ensureNum
-from FilePathList import TIMETABAL_FILE
+from GlobalFunc import ensureNum, ensureDate
+from FilePathList import TIMETABAL_FILE, SEMESTER_FILE
 import Module.Timetable.lesson_manage
 
 # 选择课程表中的时间，返回字符串列表：[单双周代号，日期代号，上课时间代号]
@@ -95,3 +95,17 @@ def timetable_clear():
                 timetable_file.write(record)
             timetable_file.close()
             break
+
+# 设置学期开始时间
+def semester_set():
+    # 获取输入
+    print('请输入学期开始的日期，格式为”年/月/日”：')
+    start = input()
+    # 检测输入合法性
+    start = ensureDate(start)
+    if start == '0':
+        return
+    # 写入文件
+    semester_file = open(SEMESTER_FILE, 'w', encoding='UTF-8')
+    semester_file.write(start)
+    semester_file.close()

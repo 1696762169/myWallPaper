@@ -31,6 +31,7 @@ MODULE_FILE = FILE_DIR + r'Module\ModuleStatus.txt'
 # 课程表模块文件
 TIMETABAL_FILE = FILE_DIR + r'Module\Timetable\timetable.txt'
 LESSON_FILE = FILE_DIR + r'Module\Timetable\lesson.txt'
+SEMESTER_FILE = FILE_DIR + r'Module\Timetable\semester.txt'
 
 if __name__ == '__main__':
     p = r'D:/myWallPaper\Code/Todo.py'

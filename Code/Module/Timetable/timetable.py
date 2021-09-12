@@ -1,7 +1,7 @@
 # timetable.py
 
 from GlobalFunc import checkModuleOn
-from Module.Timetable.timetable_manage import timetable_set, timetable_clear
+from Module.Timetable.timetable_manage import timetable_set, timetable_clear, semester_set
 from Module.Timetable.lesson_manage import lesson_create, lesson_delete
 from os import system
 
@@ -9,7 +9,8 @@ TIMETABLE_NAME = 'timetable'
 TIMETABLE_MENU = [('timetable_set()','添加课程表内容'),
                   ('timetable_clear()','清除课程表内容'),
                   ('lesson_create()','创建课程'),
-                  ('lesson_delete()','删除课程')]
+                  ('lesson_delete()','删除课程'),
+                  ('semester_set()','设置学期开始日期')]
 
 # 打印课程表管理菜单
 def printTimetableMenu():
