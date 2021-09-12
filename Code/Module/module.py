@@ -1,7 +1,7 @@
 # module.py
 
 from GlobalFunc import checkModuleOn
-from FileNameList import MODULE_FILE
+from FilePathList import MODULE_FILE
 from Module.Timetable import timetable
 from os import system
 

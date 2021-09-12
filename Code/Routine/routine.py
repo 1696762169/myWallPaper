@@ -1,7 +1,8 @@
 # routine.py
 
-from Routine import r_io
 from GlobalFunc import ensureNum, ensureMulChoice
+from FilePathList import ROUTINE_FILE
+from Routine import r_io
 import time
 
 # 创建周期任务
@@ -86,7 +87,7 @@ def r_delete():
     for choice_int in choice_list_int:
         del routine_list[choice_int - 1]
     # 重新写入
-    r_file = open(r_io.ROUTINE_FILE, 'w', encoding='UTF-8')
+    r_file = open(ROUTINE_FILE, 'w', encoding='UTF-8')
     r_file.close()
     for r_line in routine_list:
         r_io.r_out_old(r_line)

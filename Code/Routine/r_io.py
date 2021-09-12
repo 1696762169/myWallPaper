@@ -1,9 +1,8 @@
 # r_io.py
 
-from time import gmtime, strftime
+from FilePathList import ROUTINE_FILE
 from Update import CHINA_TIME
-
-ROUTINE_FILE = 'Routine\\routine.txt'
+from time import gmtime, strftime
 
 # 读取文档中的所有routine，并返回一个包含文件每一行的列表
 def r_in():

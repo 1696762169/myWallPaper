@@ -1,7 +1,7 @@
 # timetable_manage.py
 
 from GlobalFunc import ensureNum
-from FileNameList import TIMETABAL_FILE
+from FilePathList import TIMETABAL_FILE
 import Module.Timetable.lesson_manage
 
 # 选择课程表中的时间，返回字符串列表：[单双周代号，日期代号，上课时间代号]

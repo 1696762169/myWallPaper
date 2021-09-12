@@ -1,7 +1,7 @@
 # lesson_manage.py
 
 from GlobalFunc import ensureNum, ensureMulChoice
-from FileNameList import LESSON_FILE
+from FilePathList import LESSON_FILE
 
 # 读入文件中的课程，返回包含文件每一行的列表
 def lesson_in():

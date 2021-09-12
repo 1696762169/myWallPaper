@@ -1,7 +1,7 @@
 # e_paint.py
 
+from FilePathList import EVENT_FILE
 from paint_init import *
-from Event import e_io
 
 def paint_event():
     # 绘制标题
@@ -10,7 +10,7 @@ def paint_event():
     DRAW.text(e_title_location, '待办任务', TITLE_COLOR, TITLE_FONT)
     # 绘制任务
     try:
-        e_file = open(e_io.EVENT_FILE, 'r', encoding='UTF-8')
+        e_file = open(EVENT_FILE, 'r', encoding='UTF-8')
         e_mission_h = WIN_HEIGHT / 4
         count = 0
         e_list = e_file.readlines()

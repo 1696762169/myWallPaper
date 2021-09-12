@@ -1,6 +1,6 @@
 # p_paint.py
 
-from Project import project
+from FilePathList import PROJECT_FILE
 from paint_init import *
 import time
 
@@ -13,7 +13,7 @@ def drawNoProject():
 def paint_project():
     # 判断是否存在长期项目，并读取信息
     try:
-        p_file = open(project.PROJECT_FILE, 'r', encoding='UTF-8')
+        p_file = open(PROJECT_FILE, 'r', encoding='UTF-8')
         p = p_file.readline()
         p_contain = p.split(',')
         if len(p_contain) != 5:

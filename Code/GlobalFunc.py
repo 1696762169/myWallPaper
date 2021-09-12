@@ -1,6 +1,6 @@
 # GlobalFunc.py
 
-from FileNameList import MODULE_FILE
+from FilePathList import MODULE_FILE
 
 # 保证单个数字输入的合法性，返回数字字符串
 def ensureNum(number, tips, limit = 0):

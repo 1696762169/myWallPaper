@@ -1,12 +1,12 @@
 # Update.py
 
-import time
+from FilePathList import UPDATE_FILE, ROUTINE_FILE
 import paint
-import Routine
+from Routine import r_io
+import time
 
 # 中国时间戳
 CHINA_TIME = time.time() + 3600 * 8
-UPDATE_FILE = r'update.txt'
 
 # 用于判断是否执行刷新操作，返回bool值
 def updateAllow():
@@ -29,12 +29,12 @@ def updateAllow():
 # 执行刷新操作
 def update():
     # 将所有周期任务设为未完成
-    routine_list = Routine.r_io.r_in()
+    routine_list = r_io.r_in()
     for i in range(len(routine_list)):
         r_temp = routine_list[i][1:]
         r_temp = '0' + r_temp
         routine_list[i] = r_temp
-    r_file = open(Routine.r_io.ROUTINE_FILE, 'w', encoding='UTF-8')
+    r_file = open(ROUTINE_FILE, 'w', encoding='UTF-8')
     for r in routine_list:
         r_file.write(r)
     r_file.close()

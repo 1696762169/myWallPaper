@@ -1,8 +1,7 @@
 # e_io.py
 
+from FilePathList import EVENT_FILE
 import time
-
-EVENT_FILE = 'Event\\event.txt'
 
 # 获取文件内容，返回包含文件每一行的列表
 def e_in():

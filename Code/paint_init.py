@@ -1,5 +1,6 @@
 # paint_init.py
 
+from FilePathList import ASSET_DIR
 from PIL import Image, ImageDraw, ImageFont
 import ctypes
 from os import getcwd
@@ -17,7 +18,7 @@ PROJECT_COLOR = '#9b1b1b'
 TIME_COLOR = '#40afe3'
 
 # 设置字体
-font_path = r'杨任东竹石体.ttf'
+font_path = ASSET_DIR + r'Font\杨任东竹石体.ttf'
 title_size = int(WIN_HEIGHT / 16)
 TITLE_FONT = ImageFont.truetype(font_path, title_size, encoding='UTF-8')
 
@@ -30,4 +31,4 @@ SMALL_FONT = ImageFont.truetype(font_path, small_size, encoding='UTF-8')
 # 初始化画布
 WALLPAPER = Image.new('RGB', (2560, 1600), BACKGROUND_COLOR)
 DRAW = ImageDraw.Draw(WALLPAPER)
-WALLPAPER_PATH = getcwd() + r'\wallpaper.png'
+WALLPAPER_PATH = ASSET_DIR + r'Wallpaper\active.png'

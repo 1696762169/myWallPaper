@@ -1,7 +1,8 @@
 # event.py
 
-from Event import e_io
 from GlobalFunc import ensureDate, ensureMulChoice
+from FilePathList import EVENT_FILE
+from Event import e_io
 from time import strptime
 
 # 创建长期任务
@@ -42,7 +43,7 @@ def e_delete():
     for choice_int in choice_list_int:
         del event_list[choice_int - 1]
     # 重新写入
-    e_file = open(e_io.EVENT_FILE, 'w', encoding='UTF-8')
+    e_file = open(EVENT_FILE, 'w', encoding='UTF-8')
     e_file.close()
     for e_line in event_list:
         e_io.e_out_old(e_line)

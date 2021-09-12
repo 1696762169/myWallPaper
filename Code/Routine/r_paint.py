@@ -1,8 +1,8 @@
 # r_paint.py
 
-import time
+from FilePathList import ROUTINE_FILE
 from paint_init import *
-from Routine import r_io
+import time
 
 def paint_routine():
     # 绘制标题
@@ -11,7 +11,7 @@ def paint_routine():
     DRAW.text(r_title_location, '今日任务', TITLE_COLOR, TITLE_FONT)
     # 绘制任务
     try:
-        r_file = open(r_io.ROUTINE_FILE, 'r', encoding='UTF-8')
+        r_file = open(ROUTINE_FILE, 'r', encoding='UTF-8')
     except:
         return
     r_mission_h = WIN_HEIGHT / 4

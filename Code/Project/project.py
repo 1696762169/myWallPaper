@@ -1,9 +1,8 @@
 # project.py
 
 from GlobalFunc import ensureNum, ensureDate
+from FilePathList import PROJECT_FILE
 import time
-
-PROJECT_FILE = r'Project\project.txt'
 
 # 更新长期项目进度
 def p_update():
