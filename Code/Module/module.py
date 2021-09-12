@@ -42,6 +42,27 @@ def m_switch(module_name, status):
         if status == '1':
             m_switch(module_name, status)
 
+# 检测每个模块是否被开启，返回开启、未开启列表
+def classifyModule():
+    m_status_on = []
+    m_status_off = []
+    try:
+        m_file = open(MODULE_FILE, 'r', encoding='UTF-8')
+        m_list = m_file.readlines()
+        m_file.close()
+        for i in range(len(m_list)):
+            m_name = m_list[i].split(',')[0]
+            m_status = m_list[i].split(',')[2]
+            if m_status == '1\n':
+                m_status_on.append(MODULE_MENU[m_name])
+            else:
+                m_status_off.append(MODULE_MENU[m_name])
+    except:
+        for module in MODULE_MENU.values():
+            m_status_off.append(module)
+        reset_status()
+    return m_status_on, m_status_off
+
 # 打印菜单
 def printModuleMenu(m_status_on, m_status_off):
     print('请选择所要使用的模块：')
@@ -56,42 +77,25 @@ def printModuleMenu(m_status_on, m_status_off):
 
 # 可选模块管理菜单
 def module_menu():
-    timetable.timetable_menu()
-    # 读入模块信息，判断模块是否开启
-    m_status_on = []
-    m_status_off = []
-    try:
-        m_file = open(MODULE_FILE, 'r', encoding='UTF-8')
-        m_list = m_file.readlines()
-        m_file.close()
-        for i in range(len(m_list)):
-            if m_list[i].split(',')[2] == '1\n':
-                m_status_on.append(MODULE_MENU[m_list[i].split(',')[0]])
-            else:
-                m_status_off.append(MODULE_MENU[m_list[i].split(',')[0]])
-    except:
-        for module in MODULE_MENU.values():
-             m_status_off.append(module)
-        reset_status()
-    # 按顺序排列功能函数
-    m_func = []
-    for module in m_status_on:
-        m_func.append(module[2])
-    for module in m_status_off:
-        m_func.append(module[2])
-    # 获取输入
     choice = 0
     while True:
+        # 读入模块信息，判断模块是否开启
+        m_status_on, m_status_off = classifyModule()
+        # 打印模块信息
         system('cls')
         printModuleMenu(m_status_on, m_status_off)
         if choice == '':
             print('请输入正确的模块代号：')
+        # 获取输入并执行
         choice = input()
         try:
             if choice == '0':
                 break
             else:
-                eval(m_func[int(choice) - 1])
+                if int(choice) <= len(m_status_on):
+                    eval(m_status_on[int(choice) - 1][2])
+                else:
+                    eval(m_status_off[int(choice) - len(m_status_on) - 1][2])
         except:
             choice = ''
 

@@ -63,6 +63,6 @@ if __name__ == '__main__':
     # routine.r_delete()
     # event.e_delete()
     # project.project_menu()
-    module.module_menu()
+    # module.module_menu()
 
-    # main()
+    main()
